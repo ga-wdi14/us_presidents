@@ -1,0 +1,16 @@
+body {
+  background-color: Aquamarine;
+}
+.container {
+  background-color: LightSteelBlue;
+  margin: 200px auto;
+  margin-bottom: 0;
+  width: 400px;
+  padding: 20px;
+}
+.form {
+  background-color: LightSteelBlue;
+  margin: 50px auto;
+  width: 400px;
+  padding: 20px;
+}

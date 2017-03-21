@@ -1,13 +1,18 @@
-<h2>List Of US Presidents</h2>
+<div class="container">
+  <h2>List Of US Presidents</h2>
 
-<div class="presidents">
-  <h3 data-ng-repeat="president in vm.presidents">
-    <a data-ui-sref="show({name: president.name})">Prseident {{president.name}} took office in {{president.year}}</a>
-  </h2>
+  <div class="presidents">
+    <h3 data-ng-repeat="president in vm.presidents">
+      <a data-ui-sref="show({name: president.name})">Prseident {{president.name}} took office in {{president.year}}</a>
+    </h2>
+  </div>
 </div>
 
-<form ng-submit="vm.create()">
-  <input type="text" ng-model="vm.newPresident.name" placeholder="Name" />
-  <input type="number" ng-model="vm.newPresident.year" placeholder="Year" />
-  <button type="submit">Add New President!</button>
-</form>
+<div class="form">
+  <form ng-submit="vm.create()">
+    <h3>Add A New President!</h3>
+    <input type="text" ng-model="vm.newPresident.name" placeholder="Name" />
+    <input type="number" ng-model="vm.newPresident.year" placeholder="Year" />
+    <button type="submit">Add New President!</button>
+  </form>
+</div>

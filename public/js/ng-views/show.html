@@ -1,14 +1,21 @@
-<div data-ng-if="!vm.president">
-  <h2>That president is not in the database!</h2>
-</div>
+<h2><a href="/">List Of US Presidents</a></h2>
 
-<div data-ng-if="vm.president">
-  <h2>President {{vm.president.name}} took office in {{vm.president.year}}!</h2>
-
-  <div class="edit-president">
-    <input type="text" ng-model="vm.president.name" placeholder="Name" />
-    <input type="number" ng-model="vm.president.year" placeholder="Year" />
-    <button data-ng-click="vm.update()">Edit President Information!</button>
-    <button data-ng-click="vm.destroy()">Delete President!</button>
+  <div data-ng-if="!vm.president">
+    <h2>That president is not in the database!</h2>
   </div>
-</div>
+
+  <div data-ng-if="vm.president">
+    <div class="container">
+        <h2>President {{vm.president.name}} took office in {{vm.president.year}}!</h2>
+    </div>
+
+    <div class="form">
+      <div class="edit-president">
+        <h3>Edit Presidential Information!</h3>
+        <input type="text" ng-model="vm.president.name" placeholder="Name" /><br />
+        <input type="number" ng-model="vm.president.year" placeholder="Year" /><br />
+        <button data-ng-click="vm.update()">Edit President Information!</button><br />
+        <button data-ng-click="vm.destroy()">Delete President!</button>
+      </div>
+    </div>
+  </div>
