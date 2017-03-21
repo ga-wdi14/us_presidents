@@ -8,6 +8,11 @@ var PresidentSchema = new mongoose.Schema(
 );
 
 mongoose.model("President", PresidentSchema);
-mongoose.connect("mongodb://localhost/us_president");
+
+if(process.env.NODE_ENV == "production"){
+  mongoose.connect(process.env.MONGOLAB_URI);
+}else{
+  mongoose.connect("mongodb://localhost/us_president");
+}
 
 module.exports = mongoose;
