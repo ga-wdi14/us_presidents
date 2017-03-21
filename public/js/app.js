@@ -30,9 +30,23 @@ angular
   }
 
   function indexController ($state, President) {
-
+    this.presidents = President.query()
+    this.newPresident = new President()
+    this.create = function () {
+      this.newPresident.$save().then(function(president){
+        $state.go("show", { name: president.name })
+      })
+    }
   }
 
   function showController ($state, $stateParams, President) {
-
+    this.president = President.get({name: $stateParams.name})
+    this.update = function () {
+      this.president.$update({name: $stateParams.name})
+    }
+    this.destroy = function () {
+      this.president.$delete({name: $stateParams.name}).then(function(){
+        $state.go("index")
+      })
+    }
   }
