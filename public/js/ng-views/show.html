@@ -1,0 +1,14 @@
+<div data-ng-if="!vm.president">
+  <h2>That president is not in the database!</h2>
+</div>
+
+<div data-ng-if="vm.president">
+  <h2>President {{vm.president.name}} took office in {{vm.president.year}}!</h2>
+
+  <div class="edit-president">
+    <input type="text" ng-model="vm.president.name" placeholder="Name" />
+    <input type="number" ng-model="vm.president.year" placeholder="Year" />
+    <button data-ng-click="vm.update()">Edit President Information!</button>
+    <button data-ng-click="vm.destroy()">Delete President!</button>
+  </div>
+</div>
